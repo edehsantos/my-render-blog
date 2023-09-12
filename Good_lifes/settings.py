@@ -32,7 +32,7 @@ SECRET_KEY = env('SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ["*"]
+ALLOWED_HOSTS = ['.vercel.app', '.now.sh']
 
 
 # Application definition
@@ -78,7 +78,20 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
-               
+                'news.views.post_cultures',
+                'news.views.post_lists',
+                'news.views.trending_posts',
+                'news.views.one_trending_news',
+                'news.views.one_buisness_news',
+                'news.views.buisness_news',
+                'news.views.one_sports_news',
+                'news.views.sports_news',
+                'news.views.one_foreign_news',
+                'news.views.foreign_news',
+                'news.views.one_health',
+                'news.views.health_news',
+                'news.views.all_categories',
+                'news.views.recent_post',
                 
             ],
         },
@@ -94,21 +107,19 @@ WSGI_APPLICATION = 'Good_lifes.wsgi.application'
 
 
 
-#DATABASES = {
-    #'default': {
-       # 'ENGINE': 'django.db.backends.postgresql_psycopg2',
-       # 'NAME': 'Hard',
-        #'USER': 'postgres',
-        #'PORT': '5432',
-        #'HOST':  '127.0.0.1',
-        #'PASSWORD': '1232478847',
-    #}
-#}
-
-
 DATABASES = {
-    'default': dj_database_url.parse('postgres://testdb_v2pl_user:JcHSkS2y6WRihLY1Z4YvacDZEJvI8TIm@dpg-ck0b3t9au56s73bus3b0-a.ohio-postgres.render.com/testdb_v2pl')
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': 'railway',
+        'USER': 'postgres',
+        'PORT': '6600',
+        'HOST':  'containers-us-west-101.railway.app',
+        'PASSWORD': 'MZEyV3lLwYClPtwUgK4i',
+    }
 }
+
+
+
 # Password validation
 # https://docs.djangoproject.com/en/4.0/ref/settings/#auth-password-validators
 
@@ -144,8 +155,9 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/4.0/howto/static-files/
 
 STATIC_URL = 'static/'
-STATIC_ROOT = BASE_DIR / "staticfiles"
+
 STATICFILES_DIRS = os.path.join(BASE_DIR, 'static'),
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles_build', 'static')
 
 MEDIA_URL = 'media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
