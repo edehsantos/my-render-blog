@@ -120,7 +120,7 @@ WSGI_APPLICATION = 'Good_lifes.wsgi.application'
 
 
 DATABASES = {
-    'default': dj_database_url.parse('postgres://testdb_c5ji_user:l4d4scnWUHv0drqfIaXvBUyVK9Z0qkS0@dpg-ck0akq36fquc739itmm0-a.oregon-postgres.render.com/testdb_c5ji')
+    'default': dj_database_url.parse('postgres://productiondatabasee_user:px1U6lKovB3414ETQvF44Ok9HRZNZMB5@dpg-ck09tqe1erts73b4519g-a.oregon-postgres.render.com/productiondatabasee')
 }
 # Password validation
 # https://docs.djangoproject.com/en/4.0/ref/settings/#auth-password-validators
